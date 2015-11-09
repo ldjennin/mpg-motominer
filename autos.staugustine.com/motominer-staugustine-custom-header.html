@@ -97,12 +97,6 @@ googletag.cmd.push(function () {
 						.defineSizeMapping(banner_mapping)
 						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
 			NMTdata.ads.listSlots['728x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
-			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [230, 90], '230x90_top')
-						.addService(googletag.pubads())
-						.setTargeting('pos', ['autos_topbanner'])
-						.defineSizeMapping(banner_mapping)
-						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
-			NMTdata.ads.listSlots['230x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
 			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [970, 250], '970x250_1')
 						.addService(googletag.pubads())
 						.setTargeting('pos', ['970x250_1'])

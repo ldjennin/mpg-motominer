@@ -59,17 +59,87 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <!-- BEGIN NMTdata Google DFP libraries. These libraries help automate targeting values.-->
 <script src="http://sav-cdn.com/cdn-static/nmt_data/nmt_data.js"></script>
 <script src="http://sav-cdn.com/cdn-static/nmt_data/mbu/nmt_ads_sar.js"></script>
-<script type="text/javascript"> //Google DFP 
+<script type="text/javascript">
 var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; (function () { var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript'; var useSSL = 'https:' === document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js'; var node = document.getElementsByTagName('script')[0]; node.parentNode.insertBefore(gads, node); })();
-//https://support.google.com/dfp_premium/answer/3423562?hl=en
-//NMTdata.ads.refreshSlots is an array holding google ad slots that should be refreshed upon browser resize Event.
 googletag.cmd.push(function () { 
-// This code refreshes the ads on a resize event in the browser.
-var resizeTimeout; function resizeThrottler() { if (!resizeTimeout) { resizeTimeout = setTimeout(function () { resizeTimeout = null; googletag.pubads().refresh(NMTdata.ads.refreshSlots); }, 500); } } window.addEventListener("resize", resizeThrottler, false); });
+	var resizeTimeout; function resizeThrottler() { if (!resizeTimeout) { resizeTimeout = setTimeout(function () { resizeTimeout = null; googletag.pubads().refresh(NMTdata.ads.refreshSlots); }, 500); } } window.addEventListener("resize", resizeThrottler, false);
+});
+ NMTdata.ads.refreshSlots = NMTdata.ads.refreshSlots || []; // Array to add slots which need to be refreshed upon resize of browser.
+ NMTdata.ads.listSlots =  NMTdata.ads.listSlots || []; // Array to add slots which need to be refreshed upon infinite scroll.
+	googletag.cmd.push(function () {
+		var banner_mapping = googletag.sizeMapping().
+			addSize([0, 0], [320, 50]).
+			addSize([728, 0], [728, 90]).
+			build();
+		var billboard_mapping = googletag.sizeMapping().
+			addSize([0, 0], []).
+			addSize([768, 0], [970, 250]).
+			build();
+		var sidebar_mapping = googletag.sizeMapping().
+			addSize([0, 0], []).
+			addSize([320, 640], [300, 600]).
+			build();
+
+		if (typeof gblMakeId !== "undefined" && typeof gblAtk !== "undefined") {
+			// Define search page ad slots
+			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [728, 90], '728x90_top')
+						.addService(googletag.pubads())
+						.setTargeting('pos', ['autos_topbanner'])
+						.setTargeting('makeId', gblMakeId)
+						.defineSizeMapping(banner_mapping)
+						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
+			NMTdata.ads.listSlots['728x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
+		} else {
+			// Define home page ad slots
+			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [728, 90], '728x90_top')
+						.addService(googletag.pubads())
+						.setTargeting('pos', ['autos_topbanner'])
+						.defineSizeMapping(banner_mapping)
+						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
+			NMTdata.ads.listSlots['230x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
+			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [230, 90], '230x90_top')
+						.addService(googletag.pubads())
+						.setTargeting('pos', ['autos_topbanner'])
+						.defineSizeMapping(banner_mapping)
+						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
+			NMTdata.ads.listSlots['230x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
+			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [970, 250], '970x250_1')
+						.addService(googletag.pubads())
+						.setTargeting('pos', ['970x250_1'])
+						.setCollapseEmptyDiv(true)
+						.defineSizeMapping(billboard_mapping)
+						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
+			NMTdata.ads.listSlots['970x250_1'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
+			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 600], '300x600_1')
+						.addService(googletag.pubads())
+						.setTargeting('pos', ['300x600_1'])
+						.setCollapseEmptyDiv(true)
+						.defineSizeMapping(sidebar_mapping)
+						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
+			NMTdata.ads.listSlots['300x600_1'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
+
+			NMTdata.ads.listSlots['300x100_1'] = googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 100], '300x100_1') .addService(googletag.pubads()) .setTargeting('pos', ['300x100_1']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc);
+			NMTdata.ads.listSlots['300x250_1'] = googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 250], '300x250_1') .addService(googletag.pubads()) .setTargeting('pos', ['300x250_1']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc);
+			NMTdata.ads.listSlots['300x100_2'] = googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 100], '300x100_1') .addService(googletag.pubads()) .setTargeting('pos', ['300x100_2']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc);
+		};
+		googletag.pubads().enableSingleRequest();
+		googletag.pubads().disableInitialLoad();
+		googletag.pubads().enableAsyncRendering();
+		googletag.pubads().collapseEmptyDivs();
+		googletag.enableServices();
+
+	});
 </script><!-- END NMTdata Google DFP libraries. -->
-<div class="head-container"><div id="skip-link"><a class="element-invisible element-focusable" href="#main-content">Skip to main content</a> </div><header id="header" style="text-align:center;width:100%;"><div class="container"><!-- #header-inside --> <div class="clearfix" id="header-inside"><div class="row"><div class="col-md-12"><div class="header_top"><div class="region region-header-top"><section class="block block-menu clearfix" id="block-menu-menu-top-header-menu"><div class="adslot" id="728x90_1" style="width:728px;">
-<script type="text/javascript">googletag.cmd.push(function () { googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [728, 90], '728x90_1') .addService(googletag.pubads()) .setTargeting('pos', ['728x90_1']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc); googletag.enableServices(); googletag.display('728x90_1'); });
-</script></div><!--<ul class="menu nav">
+<div class="head-container"><div id="skip-link"><a class="element-invisible element-focusable" href="#main-content">Skip to main content</a> </div><header id="header" style="text-align:center;width:100%;"><div class="container"><!-- #header-inside --> <div class="clearfix" id="header-inside"><div class="row"><div class="col-md-12"><div class="header_top"><div class="region region-header-top"><section class="block block-menu clearfix" id="block-menu-menu-top-header-menu">
+<div class="ad adslot" id="728x90_top" style="width:728px;">
+<script type="text/javascript">
+ googletag.cmd.push(function() {
+          googletag.display('728x90_top');
+          googletag.pubads().refresh([NMTdata.ads.listSlots['728x90_top']]);
+        });
+</script>
+</div>
+<!--<ul class="menu nav">
 <li class="first leaf"><a href="#" title="">POST VEHICLE</a></li>
 </ul>-->
-</section><!-- /.block --> </div></div><!-- /.header_top --> <div class="logo-container"><a class="logo navbar-btn pull-left" href="#" style="padding-left:0px !important;padding-right:0px !important;" title="Home"><img alt="Home" src="http://prd-lp.staugustine.com/sites/all/themes/jobs_bootstrap/images/automative-logo.jpg" style="margin-left:-15px ! important;" width="250" /></a> </div></div></div></div></div></header><nav class="navbar container navbar-default" id="navbar" role="banner"><div class="nav-container"><div class="navbar-header"><!-- .btn-navbar is used as the toggle for collapsed navbar content --> <button class="navbar-toggle fa fa-bars" data-target=".navbar-collapse" data-toggle="collapse" type="button"> <span class="sr-only">Toggle navigation</span> </button></div><div class="navbar-collapse collapse"><nav role="navigation"><ul class="menu nav navbar-nav"><li class="first leaf active"><a class="active" href="/" title="">HOME</a></li><li class="leaf"><a href="http://staugustine.com/classifieds/design1/place_ad.html" title="">SELL MY CAR</a></li></ul></nav></div></div></nav></div>
+</section><!-- /.block --> </div></div><!-- /.header_top --> <div class="logo-container"><a class="logo navbar-btn pull-left" href="/" style="padding-left:0px !important;padding-right:0px !important;" title="Home"><img alt="Home" src="http://prd-lp.staugustine.com/sites/all/themes/jobs_bootstrap/images/automative-logo.jpg" style="margin-left:-15px ! important;" width="250" /></a> </div></div></div></div></div></header><nav class="navbar container navbar-default" id="navbar" role="banner"><div class="nav-container"><div class="navbar-header"><!-- .btn-navbar is used as the toggle for collapsed navbar content --> <button class="navbar-toggle fa fa-bars" data-target=".navbar-collapse" data-toggle="collapse" type="button"> <span class="sr-only">Toggle navigation</span> </button></div><div class="navbar-collapse collapse"><nav role="navigation"><ul class="menu nav navbar-nav"><li class="first leaf active"><a class="active" href="/" title="">HOME</a></li><li class="leaf"><a href="http://staugustine.com/classifieds/design1/place_ad.html" title="">SELL MY CAR</a></li></ul></nav></div></div></nav></div>

@@ -96,7 +96,7 @@ googletag.cmd.push(function () {
 						.setTargeting('pos', ['autos_topbanner'])
 						.defineSizeMapping(banner_mapping)
 						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
-			NMTdata.ads.listSlots['230x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
+			NMTdata.ads.listSlots['728x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
 			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [230, 90], '230x90_top')
 						.addService(googletag.pubads())
 						.setTargeting('pos', ['autos_topbanner'])
@@ -120,7 +120,7 @@ googletag.cmd.push(function () {
 
 			NMTdata.ads.listSlots['300x100_1'] = googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 100], '300x100_1') .addService(googletag.pubads()) .setTargeting('pos', ['300x100_1']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc);
 			NMTdata.ads.listSlots['300x250_1'] = googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 250], '300x250_1') .addService(googletag.pubads()) .setTargeting('pos', ['300x250_1']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc);
-			NMTdata.ads.listSlots['300x100_2'] = googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 100], '300x100_1') .addService(googletag.pubads()) .setTargeting('pos', ['300x100_2']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc);
+			NMTdata.ads.listSlots['300x100_2'] = googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [300, 100], '300x100_2') .addService(googletag.pubads()) .setTargeting('pos', ['300x100_2']) .setCollapseEmptyDiv(false) .setTargeting('ccc', NMTdata.ads.dfp_ccc);
 		};
 		googletag.pubads().enableSingleRequest();
 		googletag.pubads().disableInitialLoad();

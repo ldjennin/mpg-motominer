@@ -65,8 +65,11 @@ var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; (function 
 googletag.cmd.push(function () { 
 	var resizeTimeout; function resizeThrottler() { if (!resizeTimeout) { resizeTimeout = setTimeout(function () { resizeTimeout = null; googletag.pubads().refresh(NMTdata.ads.refreshSlots); }, 500); } } window.addEventListener("resize", resizeThrottler, false);
 });
- NMTdata.ads.refreshSlots = NMTdata.ads.refreshSlots || []; // Array to add slots which need to be refreshed upon resize of browser.
- NMTdata.ads.listSlots =  NMTdata.ads.listSlots || []; // Array to add slots which need to be refreshed upon infinite scroll.
+	/* Array to add slots which need to be refreshed upon resize of browser. */
+	NMTdata.ads.refreshSlots = NMTdata.ads.refreshSlots || [];
+	/* Array to add all slots to be loaded and displayed. */
+	NMTdata.ads.listSlots =  NMTdata.ads.listSlots || [];
+
 	googletag.cmd.push(function () {
 		var banner_mapping = googletag.sizeMapping().
 			addSize([0, 0], [320, 50]).
@@ -131,10 +134,10 @@ googletag.cmd.push(function () {
 <div class="head-container"><header id="header" style="text-align:center;width:100%;"><div class="container"><!-- #header-inside --> <div class="clearfix" id="header-inside"><div class="row"><div class="col-md-12"><div class="header_top"><div class="region region-header-top"><section class="block block-menu clearfix" id="block-menu-menu-top-header-menu">
 <div class="ad adslot" id="728x90_top" style="width:728px;">
 <script type="text/javascript">
- googletag.cmd.push(function() {
-          googletag.display('728x90_top');
-          googletag.pubads().refresh([NMTdata.ads.listSlots['728x90_top']]);
-        });
+	googletag.cmd.push(function() {
+		googletag.display('728x90_top');
+		googletag.pubads().refresh([NMTdata.ads.listSlots['728x90_top']]);
+	});
 </script>
 </div>
 <!--<ul class="menu nav">

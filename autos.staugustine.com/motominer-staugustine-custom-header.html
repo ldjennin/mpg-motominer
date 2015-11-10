@@ -87,6 +87,7 @@ googletag.cmd.push(function () {
 						.addService(googletag.pubads())
 						.setTargeting('pos', ['autos_topbanner'])
 						.setTargeting('makeId', gblMakeId)
+						.setTargeting('modelId', gblModelId)
 						.defineSizeMapping(banner_mapping)
 						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
 			NMTdata.ads.listSlots['728x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
@@ -123,6 +124,8 @@ googletag.cmd.push(function () {
 		googletag.pubads().collapseEmptyDivs();
 		googletag.enableServices();
 
+		/* Code added per Motominer recommendation to refresh top banner ad on search filter change. */
+		gblAdsToRefreshOnChangeSearch.push(NMTdata.ads.listSlots['728x90_top']);
 	});
 </script><!-- END NMTdata Google DFP libraries. -->
 <div class="head-container"><header id="header" style="text-align:center;width:100%;"><div class="container"><!-- #header-inside --> <div class="clearfix" id="header-inside"><div class="row"><div class="col-md-12"><div class="header_top"><div class="region region-header-top"><section class="block block-menu clearfix" id="block-menu-menu-top-header-menu">

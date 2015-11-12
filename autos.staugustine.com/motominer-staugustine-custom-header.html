@@ -44,7 +44,7 @@ footer h3 {margin: 0px !important;}
 .content_bottom_first .view-footer .btn-blue{margin:0 auto;}
 #VehicleList .vdp-link:hover{ text-decoration:underline !important;}
 .data-point .seller a:hover{ text-decoration:underline !important;}
-.ad{margin-bottom:10px !important; float:right;}
+.ad{margin-bottom:10px !important;}
 </style>
 <style>@import url("http://morrisapi.morris.com/b3-wrappers/sar/motominer/local.css"); @import url("http://morrisapi.morris.com/b3-wrappers/css/motominer-overrides.css"); 
 </style>
@@ -65,7 +65,29 @@ a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 <script type="text/javascript">
 var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; (function () { var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript'; var useSSL = 'https:' === document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js'; var node = document.getElementsByTagName('script')[0]; node.parentNode.insertBefore(gads, node); })();
 googletag.cmd.push(function () { 
-	var resizeTimeout; function resizeThrottler() { if (!resizeTimeout) { resizeTimeout = setTimeout(function () { resizeTimeout = null; googletag.pubads().refresh(NMTdata.ads.refreshSlots); }, 500); } } window.addEventListener("resize", resizeThrottler, false);
+	var resizeTimeout;
+	function resizeThrottler() {
+		if (!resizeTimeout) {
+			resizeTimeout = setTimeout(function ()
+				{
+					resizeTimeout = null;
+					if (typeof gblMakeId !== "undefined" && typeof gblAtk !== "undefined") {
+						googletag.pubads().clearTargeting('makeId');
+						googletag.pubads().setTargeting('makeId', gblMakeId.toString());
+						window.console.log("setTargeting makeId: " + gblMakeId.toString());
+						if (typeof gblModelId !== "undefined" && gblModelId !== null) {
+							googletag.pubads().clearTargeting('modelId');
+							googletag.pubads().setTargeting('modelId', gblModelId.toString());
+							window.console.log("setTargeting modelId: " + gblModelId.toString());
+						}
+					}
+					googletag.pubads().refresh(NMTdata.ads.refreshSlots);
+					window.console.log("Refreshing ads on resize event!");
+					
+				}, 500);
+		}
+	}
+	window.addEventListener("resize", resizeThrottler, false);
 });
 	/* Array to add slots which need to be refreshed upon resize of browser. */
 	NMTdata.ads.refreshSlots = NMTdata.ads.refreshSlots || [];
@@ -88,11 +110,15 @@ googletag.cmd.push(function () {
 
 		if (typeof gblMakeId !== "undefined" && typeof gblAtk !== "undefined") {
 			// Define search page ad slots
+			googletag.pubads().setTargeting('makeId', gblMakeId.toString());
+			if (typeof gblModelId !== "undefined" && gblModelId !== null) {
+				googletag.pubads().setTargeting('modelId', gblModelId.toString());
+			}
 			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [728, 90], '728x90_top')
 						.addService(googletag.pubads())
 						.setTargeting('pos', ['autos_topbanner'])
-						.setTargeting('makeId', gblMakeId)
-						.setTargeting('modelId', gblModelId)
+						//.setTargeting('makeId', gblMakeId)
+						//.setTargeting('modelId', gblModelId)
 						.defineSizeMapping(banner_mapping)
 						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
 			NMTdata.ads.listSlots['728x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
@@ -130,7 +156,7 @@ googletag.cmd.push(function () {
 		googletag.enableServices();
 
 		/* Code added per Motominer recommendation to refresh top banner ad on search filter change. */
-		gblAdsToRefreshOnChangeSearch.push(NMTdata.ads.listSlots['728x90_top']);
+		//gblAdsToRefreshOnChangeSearch.push(NMTdata.ads.listSlots['728x90_top']);
 	});
 </script><!-- END NMTdata Google DFP libraries. -->
 <div class="head-container"><header id="header" style="text-align:center;width:100%;"><div class="container"><!-- #header-inside --> <div class="clearfix" id="header-inside"><div class="row"><div class="col-md-12"><div class="header_top"><div class="region region-header-top"><section class="block block-menu clearfix" id="block-menu-menu-top-header-menu">

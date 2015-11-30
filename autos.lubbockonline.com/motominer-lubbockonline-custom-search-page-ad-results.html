@@ -1,0 +1,22 @@
+<div id="728x90_{{id}}" class="ad adslot" style="margin-top: 15px;margin-bottom: 15px;">
+	<script type='text/javascript'>
+   googletag.cmd.push(function() {
+		var banner_mapping = googletag.sizeMapping().
+			addSize([0, 0], [320, 50]).
+			addSize([728, 0], [728, 90]).
+			build();
+			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [728, 90], '728x90_{{id}}')
+						.addService(googletag.pubads())
+						.setTargeting('pos', ['autos_inline'])
+						.setTargeting('makeId', gblMakeId)
+						.setTargeting('modelId', gblModelId)
+						.defineSizeMapping(banner_mapping)
+						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
+
+     // Display has to be called before
+     // refresh and after the slot div is in the page.
+     googletag.display('728x90_{{id}}');
+     googletag.pubads().refresh([NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1]]);
+   });
+	</script>
+</div>

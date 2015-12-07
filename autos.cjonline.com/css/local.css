@@ -1,7 +1,7 @@
 body {color: #444;}
 body{ background-color:#F2F6F1;}
-a{ color:#0560BB;}
-a:hover, a:focus{color:#0560BB;}
+a{ color:#BE2830;}
+a:hover, a:focus{color:#BE2830;}
 /************************************************************
      Header CSS
 *************************************************************/
@@ -27,12 +27,12 @@ footer a{ color:#ffffff;}
      Menu CSS
 *************************************************************/
 .navbar-default{ background-color:/*#808184*/#cdd6ca !important;}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{background-color: /*#4A4A4A*/ #0560BB !important;
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{background-color: /*#4A4A4A*/ #BE2830 !important;
     color: #fff !important;}
 .navbar-default .navbar-nav > li > a{ color:#ffffff;}
 .navbar-default .last.leaf > a{ background-color:#F1A102;}
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: /*#4A4A4A;*/#0560BB;
+    background-color: /*#4A4A4A;*/#BE2830;
     color: #fff;
 }
 .navbar-default .last.leaf > a:hover, .navbar-default .last.leaf > a:focus {
@@ -54,10 +54,10 @@ ul.dropdown-menu li.last.leaf > a:hover { background: /*#4a4a4a;*/#cdd6ca;}
 /************************************************************
      Sidebar CSS
 *************************************************************/
-.region-sidebar-second .block-title{ /*background-color:#2F74A8;*/ background-color:#0560BB; color:#ffffff;}
+.region-sidebar-second .block-title{ /*background-color:#2F74A8;*/ background-color:#BE2830; color:#ffffff;}
 /*#block-views-jobs-feed-block, #block-views-jobs-feed-block-2, #block-views-jobs-feed-block-1, #block-block-16, #block-block-17, #block-block-18{ background-color:#edf6ff;}*/
 .item-list ul.job-sections li{list-style:none outside none !important; padding-left:20px; /* list-style-image: url(../images/bullet-icon.png) !important*/;}
-.job-sections li a{ color:#0560BB;}
+.job-sections li a{ color:#BE2830;}
 .region-sidebar-second .block-block {background-color: #ffffff;}
 /************************************************************
      Sidebar CSS END
@@ -66,7 +66,7 @@ ul.dropdown-menu li.last.leaf > a:hover { background: /*#4a4a4a;*/#cdd6ca;}
 /************************************************************
      Contact CSS
 *************************************************************/
-.block.block-webform.contact-us-form.clearfix{ background:#0560BB;}
+.block.block-webform.contact-us-form.clearfix{ background:#BE2830;}
 .contact-us-form .block-title{color:#ffffff;}
 .contact-us-form .btn-primary{background-color:#f1a102;}
 .contact-us-form .btn-primary:hover{ background-color:#D59414;}
@@ -79,7 +79,7 @@ ul.dropdown-menu li.last.leaf > a:hover { background: /*#4a4a4a;*/#cdd6ca;}
 *************************************************************/
 #slideshow {background-color: #fcfcfc;}
 .carousel ol.carousel-indicators li{  background-color:#ffffff !important; }
-.carousel ol.carousel-indicators li.active{ background-color:#0560BB !important;}
+.carousel ol.carousel-indicators li.active{ background-color:#BE2830 !important;}
 /************************************************************
      Slideshow CSS END
 *************************************************************/
@@ -87,11 +87,11 @@ ul.dropdown-menu li.last.leaf > a:hover { background: /*#4a4a4a;*/#cdd6ca;}
 /************************************************************
      BUTTON CSS
 *************************************************************/
-.btn-blue{ background:#0560BB; color:#ffffff; text-align:centerl; border:none; line-height:30px; border-radius:10px; font-size:13px; text-transform: uppercase; padding: 0px 10px; margin-right: 20px;}
+.btn-blue{ background:#BE2830; color:#ffffff; text-align:centerl; border:none; line-height:30px; border-radius:10px; font-size:13px; text-transform: uppercase; padding: 0px 10px; margin-right: 20px;}
 .btn-blue:hover{ background:#A72C32;}
-.btn-orange{ background-color:#0560BB; border-radius:10px; color:#ffffff; border:none; padding:5px; font-size: 12px}
+.btn-orange{ background-color:#BE2830; border-radius:10px; color:#ffffff; border:none; padding:5px; font-size: 12px}
 .btn-orange:hover{ background-color:#A72C32;}
-.btn-primary{background-color:#0560BB; border:none;}
+.btn-primary{background-color:#BE2830; border:none;}
 .btn-primary:hover{background:#A72C32;}
 
 /************************************************************
@@ -133,9 +133,9 @@ color: #a47e3c;
      Error message CSS END
 *************************************************************/
 
-.node-type-article h1.page-header{color:#0560BB;}
+.node-type-article h1.page-header{color:#BE2830;}
 .page-taxonomy-term h1.page-header {
-  background: #EDF6FF !important; color:#0560BB;
+  background: #EDF6FF !important; color:#BE2830;
 }
 
 /**********/
@@ -177,30 +177,30 @@ background-color:/*#D4EDF8*/ #F2F6F1 !important;
 .rrPod li:nth-child(even){
 background-color:/*#EEF6FC*/ #ffffff !important;
 }
-span.author_blue { color: #0560BB !important;}
+span.author_blue { color: #BE2830 !important;}
 .views-field-nothing span {color: #9e9f9f;}
 
 
 .btn-blue {
 /*background: #2F74A8;*/
-background:#0560BB;
+background:#BE2830;
 }
 .let-us-transform h3:hover{ background:#A72C32;}
 
-#block-block-15 h3 a{color:#0560BB;}
+#block-block-15 h3 a{color:#BE2830;}
 
 .jobsHolder .title {
-color:#0560BB;
+color:#BE2830;
 }
 .rrPodBrowse li a {color: #0967b0;}
 .rrPodBrowse li {background: url("http://job-search.staugustine.com/pro/morris/staugustine/jobs/images/iconArrow.png") no-repeat scroll right 50% #edeff1 !important}
 .let-us-transform h3{ 
-background: /*#2F74A8*/#0560BB none repeat scroll 0 0;
+background: /*#2F74A8*/#BE2830 none repeat scroll 0 0;
 color: #fff;
 }
-.footer_bottom .nav > li > a{color:#0560BB;}
+.footer_bottom .nav > li > a{color:#BE2830;}
 #employer_static .employer_button{
-background-color: #0560BB;}
+background-color: #BE2830;}
 .region-contact-form .webform-component input.contactus-error{
 background: none repeat scroll 0 0 #f8e6e0;
 border:1px solid #B94A48;
@@ -210,37 +210,37 @@ border:1px solid #B94A48;
     border: 1px solid #cdd6ca;
 }
 #block-block-21 .block-title {
-color: #0560BB;
+color: #BE2830;
 }
 .rrPodBrowse li a {
-color: #0560BB !important;}
-#block-menu-menu-top-header-menu .nav li a{ color:#0560BB}
+color: #BE2830 !important;}
+#block-menu-menu-top-header-menu .nav li a{ color:#BE2830}
 .view-slide-show .view-header .rightrail .atBtnSearch{filter: grayscale(70%); -webkit-filter: grayscale(70%);}
 
-.page-taxonomy-term h1.page-header { background: #F2F6F1 none repeat scroll 0 0 !important; color: #0560BB; text-transform: capitalize;}
+.page-taxonomy-term h1.page-header { background: #F2F6F1 none repeat scroll 0 0 !important; color: #BE2830; text-transform: capitalize;}
 
-.site-map-box-menu h2.title { color: #0560BB; font-size: 22px; padding-left: 25px; text-decoration: underline;}
+.site-map-box-menu h2.title { color: #BE2830; font-size: 22px; padding-left: 25px; text-decoration: underline;}
 
-.content .site-map-menu li.leaf > a { color: #0560BB;}
+.content .site-map-menu li.leaf > a { color: #BE2830;}
 .content .site-map-menu li.leaf > a:hover { color: #666; text-decoration: underline;}
 
-#site-map .site-map-menu ul li.collapsed,ul li.expanded,ul li.leaf{list-style:inherit; color: #0560BB;}
-#site-map .site-map-menu ul li.collapsed,ul li.expanded > a{color: #0560BB;}
-.wListing h4 { color: #0560BB;}
+#site-map .site-map-menu ul li.collapsed,ul li.expanded,ul li.leaf{list-style:inherit; color: #BE2830;}
+#site-map .site-map-menu ul li.collapsed,ul li.expanded > a{color: #BE2830;}
+.wListing h4 { color: #BE2830;}
 .wListing span { color: #666;}
-#aiCandidateFrame span.title b {color: #0560BB;}
+#aiCandidateFrame span.title b {color: #BE2830;}
 .footer_bottom #block-menu-menu-footer-bottom ul li{ margin:0px !important;}
 #block-menu-menu-footer-top ul li a {text-decoration: underline; font-size:12px;}
 .header_top {border: 1px solid #cdd6ca; box-shadow: #cdd6ca 0px 5px;}
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
-    background-color: #0560BB;
-    border-color: #0560BB;
+    background-color: #BE2830;
+    border-color: #BE2830;
     color: #fff;
     cursor: default;
     z-index: 2;
 }
-.page-node-653258 .page-header{ color:#0560BB;}
+.page-node-653258 .page-header{ color:#BE2830;}
 
 .region-content-bottom-first .block.block-views.clearfix{width:300px;}
 .content_bottom_first img{width:300px !important;}

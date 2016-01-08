@@ -259,7 +259,7 @@ footer h3 {
 			if (!resizeTimeout) {
 				resizeTimeout = setTimeout(function() {
 					resizeTimeout = null;
-					if (typeof gblMakeId !== "undefined" && typeof gblAtk !== "undefined") {
+					if (typeof gblMakeId !== "undefined" && gblMakeId !== null && typeof gblAtk !== "undefined") {
 						googletag.pubads().clearTargeting('makeId');
 						googletag.pubads().setTargeting('makeId', gblMakeId.toString());
 						if (typeof gblModelId !== "undefined" && gblModelId !== null) {

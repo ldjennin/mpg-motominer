@@ -305,7 +305,7 @@ footer h3 {
 						.setTargeting('ccc', NMTdata.ads.dfp_ccc));
 			NMTdata.ads.listSlots['728x90_top'] = NMTdata.ads.refreshSlots[NMTdata.ads.refreshSlots.length - 1];
 		/* Code added per Motominer recommendation to refresh top banner ad on search filter change. */
-		gblAdsToRefreshOnChangeSearch.push(NMTdata.ads.listSlots['728x90_top']);
+		gblDFPAdsToRefreshOnChangeSearch.push(NMTdata.ads.listSlots['728x90_top']);
 		} else {
 			// Define home page ad slots
 			NMTdata.ads.refreshSlots.push(googletag.defineSlot(NMTdata.ads.dfp_adunit_prefix + NMTdata.ads.dfp_adunit, [728, 90], '728x90_top')

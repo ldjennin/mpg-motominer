@@ -259,7 +259,7 @@ footer h3 {
 			if (!resizeTimeout) {
 				resizeTimeout = setTimeout(function() {
 					resizeTimeout = null;
-					if (typeof gblMakeId !== "undefined" && typeof gblAtk !== "undefined") {
+					if (typeof gblMakeId !== "undefined" && gblMakeId !== null && typeof gblAtk !== "undefined") {
 						googletag.pubads().clearTargeting('makeId');
 						googletag.pubads().setTargeting('makeId', gblMakeId.toString());
 						if (typeof gblModelId !== "undefined" && gblModelId !== null) {
@@ -292,7 +292,7 @@ footer h3 {
 			addSize([320, 640], [300, 600]).
 			build();
 
-		if (typeof gblMakeId !== "undefined" && typeof gblAtk !== "undefined") {
+		if (typeof gblMakeId !== "undefined" && gblMakeId !== null && typeof gblAtk !== "undefined") {
 			// Define search page ad slots ad target values
 			googletag.pubads().setTargeting('makeId', gblMakeId.toString());
 			if (typeof gblModelId !== "undefined" && gblModelId !== null) {
